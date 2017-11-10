@@ -1,0 +1,42 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
+
+int main(){
+
+        srand(time(NULL));
+        int n, r, z;
+        float x;
+
+        do {
+
+        printf("Podaj zakres: ");
+        scanf("%f", &x);
+
+        n =(int)x;
+
+        } while( n <= 0 || x-n > 0 );
+
+        r = rand()%n+1;
+
+        do {
+
+        printf("Podaj liczbe: ");
+        scanf("%d", &z);
+
+        if(z < r)
+                printf("Podales za mala liczbe! \n");
+        else if(z > r)
+                printf("Podales za duza liczbe! \n");
+        else if(z == r)
+                printf("Odgadles liczbe, ta liczba to: %d \n", r);
+        } while(z != r);
+
+return 0;
+}
+
+/*
+   'Przeszukiwanie binarne':
+   Minimalna liczba pytañ to (log2 n) gdzie n to liczba elementow w zbiorze.
+   e.g. Jezeli dany zbior N ma 33 elementy nale¿y zadaæ (log2 33) = 6 pytañ.
+*/
